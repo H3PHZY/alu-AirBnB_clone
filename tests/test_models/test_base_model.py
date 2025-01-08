@@ -31,11 +31,10 @@ class TestBasemodel(unittest.TestCase):
         initial_updated_at = my_model.updated_at
 
         my_model.save()  # Call save method to update the timestamp
-        updated_updated_at = my_model.updated_at
 
         # Ensure updated_at is modified after save
-        self.assertNotEqual(initial_updated_at, updated_updated_at)
-        self.assertTrue(updated_updated_at > initial_updated_at)
+        self.assertNotEqual(initial_updated_at, my_model.updated_at)
+        self.assertTrue(my_model.updated_at > initial_updated_at)
 
     def test_to_dict(self):
         """
