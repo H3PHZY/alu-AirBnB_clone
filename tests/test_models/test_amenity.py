@@ -2,13 +2,14 @@
 """
 Module for Amenity class unittest
 """
+import sys
 import os
 import models
 import unittest
 from datetime import datetime
 from time import sleep
 from models.amenity import Amenity
-
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../models')))
 
 class TestAmenity_instantiation(unittest.TestCase):
     """
