@@ -2,7 +2,6 @@
 """
 Module for BaseModel unittest
 """
-import os
 import unittest
 from models.base_model import BaseModel
 
@@ -13,27 +12,6 @@ class TestBasemodel(unittest.TestCase):
     Unittest for BaseModel
     """
 
-    def setUp(self):
-        """
-        Setup for temporary file path
-        """
-        try:
-            os.rename("file.json", "tmp.json")
-        except FileNotFoundError:
-            pass
-
-    def tearDown(self):
-        """
-        Tear down for temporary file path
-        """
-        try:
-            os.remove("file.json")
-        except FileNotFoundError:
-            pass
-        try:
-            os.rename("tmp.json", "file.json")
-        except FileNotFoundError:
-            pass
     def test_init(self):
         """
         Test for init
