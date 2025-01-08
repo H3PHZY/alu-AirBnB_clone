@@ -2,13 +2,8 @@
 """
 Module for Amenity class unittest
 """
-#!/usr/bin/python3
-"""
-Module for Amenity class unittest
-"""
 import sys
 import os
-# Modify sys.path before importing models
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../models')))
 import models
 import unittest
@@ -87,7 +82,10 @@ class TestAmenity_instantiation(unittest.TestCase):
         self.assertIn("'updated_at': " + my_date_repr, amenity_str)
 
     def test_args_unused(self):
-        amenity1 = Amenity(None)
+        # Instantiate Amenity without passing any positional arguments
+        amenity1 = Amenity()
+
+        # Ensure that None is not in the instance's __dict__ values
         self.assertNotIn(None, amenity1.__dict__.values())
 
     def test_instantiation_with_kwargs(self):
