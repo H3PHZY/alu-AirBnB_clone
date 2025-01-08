@@ -2,14 +2,19 @@
 """
 Module for Amenity class unittest
 """
+#!/usr/bin/python3
+"""
+Module for Amenity class unittest
+"""
 import sys
 import os
+# Modify sys.path before importing models
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../models')))
 import models
 import unittest
 from datetime import datetime
 from time import sleep
 from models.amenity import Amenity
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../models')))
 
 class TestAmenity_instantiation(unittest.TestCase):
     """
