@@ -24,7 +24,7 @@ class BaseModel:
         """
 
         """
-        inst.dict = self.__dict__.copy()
+        inst_dict = self.__dict__.copy()
         inst_dict["__class__"] = self.__class__.__name__
         inst_dict["created_at"] = self.created_at.isoformat()
         inst_dict["updated_at"] = self.updated_at.isoformat()
@@ -35,7 +35,7 @@ class BaseModel:
         """
 
         """
-        class_name = self.__class__.name__
+        class_name = self.__class__.__name__
         return "[{}] ({}) {}".format(class_name, self.id, self.__dict__)
 
 if __name__ == "__main__":
